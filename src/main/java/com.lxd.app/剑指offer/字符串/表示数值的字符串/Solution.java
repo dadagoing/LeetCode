@@ -1,4 +1,4 @@
-package org.example.剑指offer.字符串.表示数值的字符串;
+package com.lxd.app.剑指offer.字符串.表示数值的字符串;
 
 class Solution {
     public boolean isNumber(String s) {

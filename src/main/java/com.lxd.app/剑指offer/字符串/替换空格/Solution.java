@@ -1,4 +1,4 @@
-package org.example.剑指offer.字符串.替换空格;
+package com.lxd.app.剑指offer.字符串.替换空格;
 
 class Solution {
     public String replaceSpace(String s) {
