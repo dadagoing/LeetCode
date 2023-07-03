@@ -1,6 +1,5 @@
 package com.lxd.app.剑指offer.双指针.两个链表的第一个公共节点;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 class Solution {
