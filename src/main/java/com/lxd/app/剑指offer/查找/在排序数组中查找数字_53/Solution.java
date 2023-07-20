@@ -1,6 +1,4 @@
-package com.lxd.app.查找.在排序数组中查找数字_53;
-
-import java.util.Arrays;
+package com.lxd.app.剑指offer.查找.在排序数组中查找数字_53;
 
 class Solution {
 

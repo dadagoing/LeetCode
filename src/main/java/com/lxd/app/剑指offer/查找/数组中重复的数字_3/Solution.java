@@ -1,4 +1,4 @@
-package com.lxd.app.查找.数组中重复的数字_3;
+package com.lxd.app.剑指offer.查找.数组中重复的数字_3;
 
 import java.util.HashSet;
 
