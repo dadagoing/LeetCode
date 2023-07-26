@@ -7,10 +7,10 @@ import java.util.LinkedList;
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
  * }
  */
 class Solution {
@@ -19,21 +19,40 @@ class Solution {
         LinkedList<TreeNode> queue = new LinkedList<>();
         TreeNode root = new TreeNode(1);
         queue.add(root);
-//        while ()
-        for (int anInt : ints) {
-
-            TreeNode node = new TreeNode(anInt);
+        int length = ints.length;
+        int index = 1;
+        while (!queue.isEmpty()) {
+            TreeNode poll = queue.poll();
+            if (index == length) {
+                break;
+            }
+            if (ints[index] != -1) {
+                TreeNode nodeLeft = new TreeNode(ints[index++]);
+                poll.left = nodeLeft;
+                queue.add(nodeLeft);
+            } else {
+                index++;
+            }
+            if (index == length) {
+                break;
+            }
+            if (ints[index] != -1) {
+                TreeNode nodeRight = new TreeNode(ints[index++]);
+                poll.right = nodeRight;
+                queue.add(nodeRight);
+            } else {
+                index++;
+            }
         }
+        Solution solution = new Solution();
+        System.out.println(solution.isBalanced(root));
     }
 
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
         }
-        if (Math.abs(dfs(root.left, 0) - dfs(root.right, 0)) > 1) {
-            return false;
-        }
-        return isBalanced(root.left) && isBalanced(root.left);
+        return dfs(root, 0) != -1;
     }
 
     private int dfs(TreeNode root, int deep) {
@@ -41,6 +60,8 @@ class Solution {
             return deep;
         }
         deep = deep + 1;
-        return Math.max(dfs(root.left, deep), dfs(root.right, deep));
+        int left = dfs(root.left, deep);
+        int right = dfs(root.right, deep);
+        return Math.abs(left - right) > 1 || left == -1 || right == -1 ? -1 : Math.max(left, right);
     }
 }
