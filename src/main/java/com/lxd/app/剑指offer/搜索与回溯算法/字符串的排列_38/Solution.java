@@ -1,6 +1,5 @@
 package com.lxd.app.剑指offer.搜索与回溯算法.字符串的排列_38;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
